@@ -2,7 +2,7 @@ export const saveState = (state: any) => {
 
     try {
         const serializedState = JSON.stringify(state);
-        localStorage.setItem('favorites', serializedState);
+        localStorage.setItem('notes', serializedState);
     } catch {
         // ignore write errors
     }
@@ -10,7 +10,7 @@ export const saveState = (state: any) => {
 
 export const loadState = () => {
     try {
-        const serializedState = localStorage.getItem('favorites');
+        const serializedState = localStorage.getItem('notes');
         if (serializedState === null) {
             return undefined;
         }
@@ -22,5 +22,5 @@ export const loadState = () => {
 };
 
 export const deleteState  = () => {
-    localStorage.removeItem('favorites')
+    localStorage.removeItem('notes')
 }
